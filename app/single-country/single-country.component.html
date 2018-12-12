@@ -1,0 +1,62 @@
+<div class="container-fluid main-color text-center">
+    <br>
+    <a (click)="goBack()"><img src="assets/back-button.jpg" class="back change" alt="back"></a>
+    <h3 *ngIf="currentCountry" class="text-center size-change head-color">Country: {{currentCountry.name}}</h3>
+    <abbr title="Click on particular language/currency below to see the respective Countries."><b>Notice</b></abbr>
+    <br>
+    <div *ngIf="currentCountry" class="single-view country-cards-container container text-center">
+        <section class="section">
+            <div class="cover-image">
+                <img src="{{currentCountry.flag}}" alt="">
+            </div>
+            <div class="name country-item">Name: <span>{{currentCountry.name}}</span></div>
+            <div class="left">
+                <div class="capital country-item" *ngIf="currentCountry.capital">
+                    Capital: <span>{{currentCountry.capital}}</span>
+                </div>
+                <div *ngIf="currentCountry.currencies" class="currency country-item">
+                    Currencies: <a [routerLink]="['/currency', currency.code]" *ngFor="let currency of currentCountry.currencies; let first=first; let last=last">
+                        <span>{{currency.code}}[{{currency.symbol}}]{{last?'':', '}}</span></a>
+                </div>
+                <div *ngIf="currentCountry.languages" class="language country-item">Languages: <a [routerLink]="['/language', language.iso639_1, language.name]"
+                        *ngFor="let language of currentCountry.languages; let first=first; let last=last"><span>{{language.name}}[{{language.iso639_1}}]{{last?'':',
+                            '}}</span></a></div>
+                <div class="alpha3code country-item" *ngIf="currentCountry.alpha3Code">Alpha 3 Code: <span>{{currentCountry.alpha3Code}}</span></div>
+                <div class="alpha2code country-item" *ngIf="currentCountry.alpha2Code">Alpha 2 Code: <span>{{currentCountry.alpha2Code}}</span></div>
+            </div>
+            <div class="right">
+                <div *ngIf="currentCountry.altSpellings" class="alt-spell country-item">Alternate Spellings: <span
+                        *ngFor="let altSpl of currentCountry.altSpellings; let first=first; let last=last">{{altSpl}}{{last
+                        ? '' : ', '}}</span></div>
+                <div class="area country-item" *ngIf="currentCountry.area">Area: <span>{{currentCountry.area}}</span></div>
+                <div *ngIf="currentCountry.borders" class="country-item">Borders: <span *ngFor="let border of currentCountry.borders; let first=first; let last=last">{{border}}{{last
+                        ?
+                        '' : ', '}}</span></div>
+                <div *ngIf="currentCountry.callingCodes" class="calling-code country-item">Calling Codes: <span *ngFor="let callCode of currentCountry.callingCodes; let first=first; let last=last">{{callCode}}{{last
+                        ? '' : ', '}}</span></div>
+                <div class="cioc country-item" *ngIf="currentCountry.cioc">CIOC: <span>{{currentCountry.cioc}}</span></div>
+            </div>
+            <div class="left">
+                <div class="demonym country-item" *ngIf="currentCountry.demonym">Demonym: <span>{{currentCountry.demonym}}</span></div>
+                <div class="gini country-item" *ngIf="currentCountry.gini">Gini: <span>{{currentCountry.gini}}</span></div>
+                <div *ngIf="currentCountry.latlng" class="lat-lang country-item">LatLang: <span *ngFor="let latlang of currentCountry.latlng; let first=first; let last=last">{{latlang}}{{last
+                        ?
+                        '' : ', '}}</span></div>
+                <div class="native-name country-item" *ngIf="currentCountry.nativeName">Native Name: <span>{{currentCountry.nativeName}}</span></div>
+                <div class="numeric-code country-item" *ngIf="currentCountry.numericCode">Numeric Code: <span>{{currentCountry.numericCode}}</span></div>
+                <div class="population country-item" *ngIf="currentCountry.population">Population: <span>{{currentCountry.population}}</span></div>
+            </div>
+            <div class="right">
+                <div *ngIf="currentCountry.regionalBlocs" class="regional-blocs country-item">Regional Blocs: <span
+                        *ngFor="let bloc of currentCountry.regionalBlocs; let first=first; let last=last">{{bloc.name}}{{last
+                        ? '' : ', '}}</span></div>
+                <div class="sub-region country-item" *ngIf="currentCountry.subregion">Sub Region: <span>{{currentCountry.subregion}}</span></div>
+                <div *ngIf="currentCountry.timezones" class="timezones country-item">TimeZones: <span *ngFor="let timezone of currentCountry.timezones; let first=first; let last=last">{{timezone}}{{last
+                        ? '' : ', '}}</span></div>
+                <div *ngIf="currentCountry.topLevelDomain" class="topleveldomain country-item">Top Level Domain: <span
+                        *ngFor="let topLevelDomains of currentCountry.topLevelDomain; let first=first; let last=last">{{topLevelDomains}}{{last
+                        ? '' : ', '}}</span></div>
+            </div>
+        </section>
+    </div>
+</div>

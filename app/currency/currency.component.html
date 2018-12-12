@@ -1,0 +1,26 @@
+<!-- country details by filter currency-->
+<div class="container-fluid body-color text-center">
+  <br>
+  <a (click)="goBack()"><img src="assets/back-button.jpg" class="back change" alt="back"></a>
+  <h3 class="size-change head-color"> Currency Filter Applied ({{this.currency}})</h3>
+  <br>
+  <div class="container">
+    <div class="row" *ngIf="allCountries">
+      <div class="col" *ngFor="let country of allCountries">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top change" src="{{country.flag}}" alt="flag">
+          <div class="card-body">
+            <h5 class="card-title">Name: {{country.name | uppercase}}</h5>
+            <h6 class="card-text" *ngIf="country.capital">Capital: {{country.capital}}</h6>
+            <h6 class="card-text">Currency: {{country.currencies[0].name}}</h6>
+            <p class="card-text">Population: {{country.population}}</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-outline-primary btn-sm" [routerLink]="['/singleCountry', country.name]">Know More</button>
+          </div>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+</div>

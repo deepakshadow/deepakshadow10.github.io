@@ -1,0 +1,22 @@
+<div class="container-fluid body-color text-center">
+    <br>
+    <h3 class="head-color size-change">All Regions</h3>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-4" style="justify-content: center;" *ngFor="let region of allRegions">
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top change" src="assets/{{region}}.jpg" alt="{{region}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{region}}</h5>
+                        <button type="button" class="btn btn-outline-primary btn-sm" [routerLink]="['/countries', region]">View</button>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
+    </div>
+
+</div>

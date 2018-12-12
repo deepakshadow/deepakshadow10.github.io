@@ -1,0 +1,235 @@
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'NTR', sans-serif;
+}
+
+.nav-color {
+    background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
+    border-bottom: 1px solid gold;
+}
+
+.body-color {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px 0px;
+}
+
+.card-title {
+    text-transform: capitalize;
+    color: dodgerblue;
+}
+
+.head-color {
+    color: rgb(98, 107, 116);
+}
+
+.change {
+    transition: all 0.3s;
+}
+
+.change:hover {
+    transform: scale(1.06);
+    opacity: 0.7;
+    border-radius: 5px;
+}
+.card-image {
+    padding: 40px;
+}
+
+.country-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 0px;
+    position: relative;
+}
+
+.country-cards-container p {
+    padding-top: 20px;
+}
+
+.country-cards-container .card {
+    margin: 0px 1%;
+    margin-bottom: 30px;
+    width: 23%;
+}
+
+.country-cards-container .card-image {
+    border-bottom: rgba(0, 0, 0, 0.2);
+}
+
+.country-cards-container .card-body {
+    color: white;
+}
+
+.country-cards-container p span {
+    font-style: italic;
+}
+
+.card-text p {
+    padding: 0px;
+    text-align: left;
+}
+
+.card-text {
+    padding: 5px 10px;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    background: #68688d;
+    width: 10px;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #403d52;
+    border-radius: 30px;
+}
+/* scrollbar */
+
+.back {
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.main-color {
+    background: #40E0D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.section {
+    width: calc(99% - 10px);
+    margin: 0 auto;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.left {
+    display: block;
+    width: calc(48% - 20px);
+    padding: 3px 10px;
+    margin-bottom: 20px;
+}
+
+.right {
+    display: block;
+    width: calc(48% - 20px);
+    padding: 3px 10px;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 1.3rem;
+    border-bottom: #a590f1;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.currency a:hover {
+    text-decoration: underline;
+}
+
+.language a:hover {
+    text-decoration: underline;
+}
+
+.cover-image {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 70px rgba(0, 0, 0, 0.5);
+}
+
+.cover-image img {
+    width: 100%;
+    display: block;
+    max-width: 100%;
+}
+
+.country-item, .country-item a {
+    color: #88def3;
+}
+
+.country-item span {
+    color: white;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    .card-image {
+        padding: 15px;
+    }
+
+    .card-body p {
+        padding-bottom: 7.5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .section {
+        width: calc(98% - 20px);
+        padding: 20px 10px;
+    }
+
+    .left, .right {
+        width: calc(100% - 20px);
+    }
+
+    .single-view {
+        text-align: center;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .card-image {
+        padding: 30px;
+    }
+
+    .card-body p {
+        padding-bottom: 15px;
+    }
+
+    .logo p {
+        font-size: 1rem;
+    }
+
+    .size-change {
+        font-size: 17.5px;
+    }
+
+    .country-cards-container .card {
+        width: 100%;
+    }
+
+}
